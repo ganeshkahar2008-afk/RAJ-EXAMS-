@@ -1,0 +1,458 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exam Material | Raj Competition</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f7f3eb;
+  color:#222;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#751d16,#c96a24);
+  color:white;
+  padding:18px 5%;
+  box-shadow:0 4px 15px #0003;
+}
+
+.header{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#ffd45c;
+}
+
+.home{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:45px 20px;
+  background:linear-gradient(135deg,#fff0d0,#f5d49c);
+}
+
+.hero .icon{
+  font-size:55px;
+}
+
+.hero h1{
+  color:#681910;
+  font-size:38px;
+  margin:10px;
+}
+
+.hero p{
+  color:#60483a;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:35px 20px;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  border:1px solid #eadfce;
+  box-shadow:0 5px 20px #0001;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card-icon{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.card h2{
+  color:#751d16;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#666;
+  line-height:1.5;
+  margin-bottom:18px;
+}
+
+.btn{
+  display:inline-block;
+  background:#751d16;
+  color:white;
+  border:0;
+  padding:11px 18px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#a72b1d;
+}
+
+/* MATERIAL LIST */
+.material{
+  margin-top:35px;
+}
+
+.material h2{
+  text-align:center;
+  color:#681910;
+  margin-bottom:20px;
+}
+
+.material-item{
+  background:white;
+  margin:12px 0;
+  padding:18px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  box-shadow:0 3px 12px #0001;
+}
+
+.material-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.material-info span{
+  font-size:30px;
+}
+
+/* FOOTER */
+footer{
+  margin-top:30px;
+  padding:30px;
+  text-align:center;
+  background:#2d1713;
+  color:#ddd;
+}
+
+footer h2{
+  color:#ffd45c;
+  margin-bottom:8px;
+}
+
+@media(max-width:600px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .material-item{
+    align-items:flex-start;
+  }
+
+  .material-item .btn{
+    padding:9px 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header">
+
+    <div class="logo">
+      🏜️ RAJ <span>COMPETITION</span>
+    </div>
+
+    <a href="index.html" class="home">
+      🏠 Home
+    </a>
+
+  </div>
+</header>
+
+
+<!-- EXAM HEADER -->
+
+<div class="hero">
+
+  <div class="icon" id="examIcon">📚</div>
+
+  <h1 id="examName">
+    Exam Material
+  </h1>
+
+  <p>
+    Notes • PYQ • Mock Test • Study Material
+  </p>
+
+</div>
+
+
+<div class="container">
+
+  <!-- MAIN OPTIONS -->
+
+  <div class="grid">
+
+    <div class="card">
+
+      <div class="card-icon">📖</div>
+
+      <h2>Notes</h2>
+
+      <p>
+        Topic-wise और chapter-wise
+        exam notes.
+      </p>
+
+      <button class="btn"
+      onclick="showMessage('Notes')">
+        View Notes
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">📄</div>
+
+      <h2>PYQ</h2>
+
+      <p>
+        Previous Year Questions
+        और उनके solutions.
+      </p>
+
+      <button class="btn"
+      onclick="showMessage('PYQ')">
+        View PYQ
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🎯</div>
+
+      <h2>Mock Test</h2>
+
+      <p>
+        Online MCQ test देकर
+        अपनी तैयारी check करें।
+      </p>
+
+      <button class="btn"
+      onclick="showMessage('Mock Test')">
+        Start Test
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- SAMPLE MATERIAL -->
+
+  <div class="material">
+
+    <h2>📚 Available Study Material</h2>
+
+
+    <div class="material-item">
+
+      <div class="material-info">
+
+        <span>📘</span>
+
+        <div>
+          <b>Rajasthan GK Notes</b>
+          <p>Important Topics</p>
+        </div>
+
+      </div>
+
+      <button class="btn"
+      onclick="openPDF()">
+        👁️ View
+      </button>
+
+    </div>
+
+
+    <div class="material-item">
+
+      <div class="material-info">
+
+        <span>📄</span>
+
+        <div>
+          <b>Previous Year Paper</b>
+          <p>Practice Paper</p>
+        </div>
+
+      </div>
+
+      <button class="btn"
+      onclick="openPDF()">
+        👁️ View
+      </button>
+
+    </div>
+
+
+    <div class="material-item">
+
+      <div class="material-info">
+
+        <span>📝</span>
+
+        <div>
+          <b>Important Questions</b>
+          <p>Exam Practice</p>
+        </div>
+
+      </div>
+
+      <button class="btn"
+      onclick="showMessage('Questions')">
+        Open
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <h2>🏜️ RAJ COMPETITION</h2>
+
+  <p>
+    Rajasthan Competitive Exam Preparation
+  </p>
+
+  <p>
+    © 2026 Raj Competition
+  </p>
+
+</footer>
+
+
+<script>
+
+/* GET EXAM NAME */
+
+const params =
+new URLSearchParams(window.location.search);
+
+const exam =
+params.get("exam");
+
+
+const examName =
+document.getElementById("examName");
+
+const examIcon =
+document.getElementById("examIcon");
+
+
+if(exam){
+
+  examName.innerText =
+  exam + " Material";
+
+  if(exam.toLowerCase()=="reet"){
+    examIcon.innerText="👨‍🏫";
+  }
+
+  else if(exam.toLowerCase()=="bstc"){
+    examIcon.innerText="📚";
+  }
+
+  else if(exam.toLowerCase()=="cet"){
+    examIcon.innerText="📝";
+  }
+
+  else if(exam.toLowerCase()=="patwar"){
+    examIcon.innerText="🏛️";
+  }
+
+  else{
+    examIcon.innerText="📚";
+  }
+
+}
+
+
+/* BUTTON MESSAGE */
+
+function showMessage(type){
+
+  alert(
+    type +
+    " section जल्द ही live किया जाएगा 🚀"
+  );
+
+}
+
+
+/* PDF */
+
+function openPDF(){
+
+  alert(
+    "PDF system अगले चरण में जोड़ा जाएगा 📄"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
+```
