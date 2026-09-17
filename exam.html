@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -29,7 +28,7 @@ header{
 }
 
 .header{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   display:flex;
   justify-content:space-between;
@@ -37,7 +36,7 @@ header{
 }
 
 .logo{
-  font-size:24px;
+  font-size:25px;
   font-weight:900;
 }
 
@@ -58,25 +57,33 @@ header{
   background:linear-gradient(135deg,#fff0d0,#f5d49c);
 }
 
-.hero .icon{
-  font-size:55px;
+.exam-icon{
+  font-size:60px;
 }
 
 .hero h1{
   color:#681910;
-  font-size:38px;
+  font-size:40px;
   margin:10px;
 }
 
 .hero p{
   color:#60483a;
+  font-size:17px;
 }
 
 /* CONTAINER */
 .container{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
-  padding:35px 20px;
+  padding:40px 20px;
+}
+
+/* CATEGORY */
+.category-title{
+  color:#681910;
+  margin:35px 0 20px;
+  font-size:28px;
 }
 
 /* CARDS */
@@ -97,6 +104,7 @@ header{
 
 .card:hover{
   transform:translateY(-5px);
+  box-shadow:0 12px 28px #0002;
 }
 
 .card-icon{
@@ -104,7 +112,7 @@ header{
   margin-bottom:12px;
 }
 
-.card h2{
+.card h3{
   color:#751d16;
   margin-bottom:8px;
 }
@@ -115,6 +123,7 @@ header{
   margin-bottom:18px;
 }
 
+/* BUTTON */
 .btn{
   display:inline-block;
   background:#751d16;
@@ -131,43 +140,58 @@ header{
   background:#a72b1d;
 }
 
-/* MATERIAL LIST */
-.material{
-  margin-top:35px;
-}
-
-.material h2{
-  text-align:center;
-  color:#681910;
-  margin-bottom:20px;
-}
-
-.material-item{
-  background:white;
-  margin:12px 0;
-  padding:18px;
-  border-radius:12px;
+/* PDF LIST */
+.pdf-list{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  box-shadow:0 3px 12px #0001;
+  flex-direction:column;
+  gap:12px;
 }
 
-.material-info{
+.pdf-item{
+  background:white;
+  padding:17px;
+  border-radius:13px;
+  box-shadow:0 3px 12px #0001;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.pdf-info{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-.material-info span{
-  font-size:30px;
+.pdf-icon{
+  font-size:32px;
+}
+
+.pdf-info h3{
+  color:#751d16;
+}
+
+.pdf-info p{
+  color:#777;
+  margin-top:4px;
+}
+
+/* NOTICE */
+.notice{
+  margin-top:35px;
+  padding:20px;
+  background:#fff0d0;
+  border-left:5px solid #c96a24;
+  border-radius:10px;
+  color:#593b2e;
 }
 
 /* FOOTER */
 footer{
-  margin-top:30px;
-  padding:30px;
+  margin-top:40px;
+  padding:35px 20px;
   text-align:center;
   background:#2d1713;
   color:#ddd;
@@ -178,17 +202,26 @@ footer h2{
   margin-bottom:8px;
 }
 
+footer p{
+  margin:6px;
+}
+
+/* MOBILE */
 @media(max-width:600px){
+
+  .logo{
+    font-size:19px;
+  }
 
   .hero h1{
     font-size:30px;
   }
 
-  .material-item{
+  .pdf-item{
     align-items:flex-start;
   }
 
-  .material-item .btn{
+  .pdf-item .btn{
     padding:9px 12px;
   }
 }
@@ -197,202 +230,393 @@ footer h2{
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-  <div class="header">
 
-    <div class="logo">
-      🏜️ RAJ <span>COMPETITION</span>
-    </div>
+<div class="header">
 
-    <a href="index.html" class="home">
-      🏠 Home
-    </a>
+<div class="logo">
+🏜️ RAJ <span>COMPETITION</span>
+</div>
 
-  </div>
+<a href="index.html" class="home">
+🏠 Home
+</a>
+
+</div>
+
 </header>
 
 
-<!-- EXAM HEADER -->
+<!-- HERO -->
 
 <div class="hero">
 
-  <div class="icon" id="examIcon">📚</div>
+<div class="exam-icon" id="examIcon">
+📚
+</div>
 
-  <h1 id="examName">
-    Exam Material
-  </h1>
+<h1 id="examName">
+Exam Material
+</h1>
 
-  <p>
-    Notes • PYQ • Mock Test • Study Material
-  </p>
+<p>
+Notes • PYQ • Mock Test • Practice
+</p>
 
 </div>
 
 
 <div class="container">
 
-  <!-- MAIN OPTIONS -->
 
-  <div class="grid">
+<!-- MAIN CATEGORIES -->
 
-    <div class="card">
+<h2 class="category-title">
+📚 Study Material
+</h2>
 
-      <div class="card-icon">📖</div>
-
-      <h2>Notes</h2>
-
-      <p>
-        Topic-wise और chapter-wise
-        exam notes.
-      </p>
-
-      <button class="btn"
-      onclick="showMessage('Notes')">
-        View Notes
-      </button>
-
-    </div>
+<div class="grid">
 
 
-    <div class="card">
+<!-- NOTES -->
 
-      <div class="card-icon">📄</div>
+<div class="card">
 
-      <h2>PYQ</h2>
+<div class="card-icon">
+📖
+</div>
 
-      <p>
-        Previous Year Questions
-        और उनके solutions.
-      </p>
+<h3>
+Notes
+</h3>
 
-      <button class="btn"
-      onclick="showMessage('PYQ')">
-        View PYQ
-      </button>
+<p>
+Chapter-wise और topic-wise
+exam notes.
+</p>
 
-    </div>
-
-
-    <div class="card">
-
-      <div class="card-icon">🎯</div>
-
-      <h2>Mock Test</h2>
-
-      <p>
-        Online MCQ test देकर
-        अपनी तैयारी check करें।
-      </p>
-
-      <button class="btn"
-      onclick="showMessage('Mock Test')">
-        Start Test
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- SAMPLE MATERIAL -->
-
-  <div class="material">
-
-    <h2>📚 Available Study Material</h2>
-
-
-    <div class="material-item">
-
-      <div class="material-info">
-
-        <span>📘</span>
-
-        <div>
-          <b>Rajasthan GK Notes</b>
-          <p>Important Topics</p>
-        </div>
-
-      </div>
-
-      <button class="btn"
-      onclick="openPDF()">
-        👁️ View
-      </button>
-
-    </div>
-
-
-    <div class="material-item">
-
-      <div class="material-info">
-
-        <span>📄</span>
-
-        <div>
-          <b>Previous Year Paper</b>
-          <p>Practice Paper</p>
-        </div>
-
-      </div>
-
-      <button class="btn"
-      onclick="openPDF()">
-        👁️ View
-      </button>
-
-    </div>
-
-
-    <div class="material-item">
-
-      <div class="material-info">
-
-        <span>📝</span>
-
-        <div>
-          <b>Important Questions</b>
-          <p>Exam Practice</p>
-        </div>
-
-      </div>
-
-      <button class="btn"
-      onclick="showMessage('Questions')">
-        Open
-      </button>
-
-    </div>
-
-  </div>
+<button class="btn"
+onclick="showSection('notes')">
+Open Notes
+</button>
 
 </div>
 
 
+<!-- PYQ -->
+
+<div class="card">
+
+<div class="card-icon">
+📄
+</div>
+
+<h3>
+PYQ
+</h3>
+
+<p>
+Previous Year Questions
+और practice papers.
+</p>
+
+<button class="btn"
+onclick="showSection('pyq')">
+Open PYQ
+</button>
+
+</div>
+
+
+<!-- TEST -->
+
+<div class="card">
+
+<div class="card-icon">
+🎯
+</div>
+
+<h3>
+Mock Test
+</h3>
+
+<p>
+Online MCQ test देकर
+अपनी तैयारी check करें।
+</p>
+
+<button class="btn"
+onclick="showSection('test')">
+Start Test
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- NOTES -->
+
+<div id="notes">
+
+<h2 class="category-title">
+📖 Notes
+</h2>
+
+<div class="pdf-list">
+
+<div class="pdf-item">
+
+<div class="pdf-info">
+
+<div class="pdf-icon">
+📘
+</div>
+
+<div>
+
+<h3>
+EVS Notes
+</h3>
+
+<p>
+पर्यावरण अध्ययन
+</p>
+
+</div>
+
+</div>
+
+<button class="btn"
+onclick="comingSoon()">
+👁️ View
+</button>
+
+</div>
+
+
+<div class="pdf-item">
+
+<div class="pdf-info">
+
+<div class="pdf-icon">
+📘
+</div>
+
+<div>
+
+<h3>
+Hindi Notes
+</h3>
+
+<p>
+हिंदी विषय के महत्वपूर्ण Notes
+</p>
+
+</div>
+
+</div>
+
+<button class="btn"
+onclick="comingSoon()">
+👁️ View
+</button>
+
+</div>
+
+
+<div class="pdf-item">
+
+<div class="pdf-info">
+
+<div class="pdf-icon">
+📘
+</div>
+
+<div>
+
+<h3>
+Maths Notes
+</h3>
+
+<p>
+महत्वपूर्ण गणित Topics
+</p>
+
+</div>
+
+</div>
+
+<button class="btn"
+onclick="comingSoon()">
+👁️ View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PYQ -->
+
+<div id="pyq">
+
+<h2 class="category-title">
+📄 Previous Year Questions
+</h2>
+
+<div class="pdf-list">
+
+<div class="pdf-item">
+
+<div class="pdf-info">
+
+<div class="pdf-icon">
+📄
+</div>
+
+<div>
+
+<h3>
+REET Previous Year Paper
+</h3>
+
+<p>
+Practice PDF
+</p>
+
+</div>
+
+</div>
+
+<button class="btn"
+onclick="comingSoon()">
+View
+</button>
+
+</div>
+
+
+<div class="pdf-item">
+
+<div class="pdf-info">
+
+<div class="pdf-icon">
+📄
+</div>
+
+<div>
+
+<h3>
+Important PYQ
+</h3>
+
+<p>
+Exam में पूछे गए महत्वपूर्ण प्रश्न
+</p>
+
+</div>
+
+</div>
+
+<button class="btn"
+onclick="comingSoon()">
+View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TEST -->
+
+<div id="test">
+
+<h2 class="category-title">
+🎯 Mock Test
+</h2>
+
+<div class="card">
+
+<div class="card-icon">
+🚀
+</div>
+
+<h3>
+Rajasthan GK Mock Test
+</h3>
+
+<p>
+MCQ • Timer • Score • Result
+</p>
+
+<button class="btn"
+onclick="startTest()">
+Start Test
+</button>
+
+</div>
+
+</div>
+
+
+<!-- NOTICE -->
+
+<div class="notice">
+
+<b>📢 जल्द उपलब्ध होगा:</b>
+
+<br><br>
+
+नए Notes, PYQ और Online Mock Tests
+लगातार जोड़े जाएंगे।
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
 <footer>
 
-  <h2>🏜️ RAJ COMPETITION</h2>
+<h2>
+🏜️ RAJ COMPETITION
+</h2>
 
-  <p>
-    Rajasthan Competitive Exam Preparation
-  </p>
+<p>
+Rajasthan Competitive Exam Preparation
+</p>
 
-  <p>
-    © 2026 Raj Competition
-  </p>
+<p>
+Notes • PYQ • Mock Test
+</p>
+
+<p>
+© 2026 Raj Competition
+</p>
 
 </footer>
 
 
 <script>
 
-/* GET EXAM NAME */
+/* EXAM NAME */
 
 const params =
 new URLSearchParams(window.location.search);
 
 const exam =
 params.get("exam");
-
 
 const examName =
 document.getElementById("examName");
@@ -403,56 +627,66 @@ document.getElementById("examIcon");
 
 if(exam){
 
-  examName.innerText =
-  exam + " Material";
+examName.innerText =
+exam + " Material";
 
-  if(exam.toLowerCase()=="reet"){
-    examIcon.innerText="👨‍🏫";
-  }
+if(exam.toLowerCase()=="reet"){
+examIcon.innerText="👨‍🏫";
+}
 
-  else if(exam.toLowerCase()=="bstc"){
-    examIcon.innerText="📚";
-  }
+else if(exam.toLowerCase()=="bstc"){
+examIcon.innerText="📚";
+}
 
-  else if(exam.toLowerCase()=="cet"){
-    examIcon.innerText="📝";
-  }
+else if(exam.toLowerCase()=="cet"){
+examIcon.innerText="📝";
+}
 
-  else if(exam.toLowerCase()=="patwar"){
-    examIcon.innerText="🏛️";
-  }
+else if(exam.toLowerCase()=="patwar"){
+examIcon.innerText="🏛️";
+}
 
-  else{
-    examIcon.innerText="📚";
-  }
+else{
+examIcon.innerText="📚";
+}
 
 }
 
 
-/* BUTTON MESSAGE */
+/* SECTION */
 
-function showMessage(type){
+function showSection(section){
 
-  alert(
-    type +
-    " section जल्द ही live किया जाएगा 🚀"
-  );
+document.getElementById(section)
+.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
 
-/* PDF */
+/* COMING SOON */
 
-function openPDF(){
+function comingSoon(){
 
-  alert(
-    "PDF system अगले चरण में जोड़ा जाएगा 📄"
-  );
+alert(
+"📚 यह PDF अभी तैयार नहीं है।"
+);
+
+}
+
+
+/* TEST */
+
+function startTest(){
+
+alert(
+"🎯 Mock Test System अगले चरण में activate होगा।"
+);
 
 }
 
 </script>
 
 </body>
-</html>
-```
+  </html>
