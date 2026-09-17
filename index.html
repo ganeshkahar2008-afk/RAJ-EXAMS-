@@ -1,0 +1,593 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raj Competition | Rajasthan Exam Preparation</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f7f4ee;
+  color:#222;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#7b1e16,#c96b25);
+  color:white;
+  padding:18px 5%;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 4px 15px #0003;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#ffd45c;
+}
+
+nav{
+  display:flex;
+  gap:18px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* HERO */
+.hero{
+  min-height:430px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:50px 20px;
+  background:
+    radial-gradient(circle at 20% 20%,#f6bd5c55,transparent 30%),
+    linear-gradient(135deg,#fff0d0,#f7d49b);
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.badge{
+  display:inline-block;
+  background:#7b1e16;
+  color:white;
+  padding:8px 16px;
+  border-radius:30px;
+  margin-bottom:18px;
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:48px;
+  color:#641810;
+  margin-bottom:15px;
+}
+
+.hero h1 span{
+  color:#c96b25;
+}
+
+.hero p{
+  font-size:19px;
+  color:#513d32;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  background:#7b1e16;
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:5px;
+  border:0;
+  cursor:pointer;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  background:#a52a1c;
+}
+
+/* SEARCH */
+.search-box{
+  max-width:750px;
+  margin:-30px auto 35px;
+  position:relative;
+  z-index:5;
+}
+
+.search-box input{
+  width:100%;
+  padding:18px 22px;
+  border:0;
+  border-radius:15px;
+  font-size:17px;
+  box-shadow:0 6px 25px #0002;
+  outline:none;
+}
+
+/* SECTION */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:45px 20px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-title h2{
+  color:#641810;
+  font-size:32px;
+}
+
+.section-title p{
+  margin-top:8px;
+  color:#666;
+}
+
+/* EXAM CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
+  border:1px solid #eadfce;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px #0002;
+}
+
+.icon{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  color:#7b1e16;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#666;
+  line-height:1.5;
+  margin-bottom:15px;
+}
+
+/* MATERIAL */
+.material-card{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.material-icon{
+  font-size:35px;
+}
+
+/* STATS */
+.stats{
+  background:#641810;
+  color:white;
+  border-radius:22px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:30px;
+  gap:20px;
+  text-align:center;
+}
+
+.stat h2{
+  font-size:32px;
+  color:#ffd45c;
+}
+
+.stat p{
+  margin-top:5px;
+}
+
+/* FOOTER */
+footer{
+  background:#2c1713;
+  color:#ddd;
+  text-align:center;
+  padding:35px 20px;
+  margin-top:30px;
+}
+
+footer h2{
+  color:#ffd45c;
+  margin-bottom:10px;
+}
+
+footer p{
+  margin:7px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      🏜️ RAJ <span>COMPETITION</span>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#exams">Exams</a>
+      <a href="#material">Material</a>
+      <a href="#test">Test</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<div class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      🇮🇳 Rajasthan Competitive Exams
+    </div>
+
+    <h1>
+      तैयारी अब <span>Smart</span> तरीके से
+    </h1>
+
+    <p>
+      Rajasthan के प्रतियोगी परीक्षाओं के लिए
+      Notes, PYQ, Mock Test और Study Material
+      एक ही जगह।
+    </p>
+
+    <a href="#exams" class="btn">
+      📚 Exams देखें
+    </a>
+
+    <a href="#material" class="btn">
+      📖 Study Material
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input
+    type="text"
+    id="search"
+    placeholder="🔍 Search करें... जैसे REET, BSTC, Rajasthan GK"
+    onkeyup="searchCards()"
+  >
+</div>
+
+
+<!-- EXAMS -->
+<section id="exams">
+
+  <div class="section-title">
+    <h2>📚 Rajasthan Exams</h2>
+    <p>अपनी परीक्षा चुनें और तैयारी शुरू करें</p>
+  </div>
+
+  <div class="grid" id="examGrid">
+
+    <div class="card searchable">
+      <div class="icon">👨‍🏫</div>
+      <h3>REET</h3>
+      <p>Level 1 और Level 2 की तैयारी</p>
+      <button class="btn" onclick="openExam('REET')">
+        Open
+      </button>
+    </div>
+
+    <div class="card searchable">
+      <div class="icon">📚</div>
+      <h3>BSTC / D.El.Ed</h3>
+      <p>Pre D.El.Ed प्रवेश परीक्षा</p>
+      <button class="btn" onclick="openExam('BSTC')">
+        Open
+      </button>
+    </div>
+
+    <div class="card searchable">
+      <div class="icon">📝</div>
+      <h3>CET Rajasthan</h3>
+      <p>Graduation और Senior Secondary CET</p>
+      <button class="btn" onclick="openExam('CET')">
+        Open
+      </button>
+    </div>
+
+    <div class="card searchable">
+      <div class="icon">🏛️</div>
+      <h3>Patwar</h3>
+      <p>Rajasthan Patwar परीक्षा सामग्री</p>
+      <button class="btn" onclick="openExam('Patwar')">
+        Open
+      </button>
+    </div>
+
+    <div class="card searchable">
+      <div class="icon">🇮🇳</div>
+      <h3>Rajasthan GK</h3>
+      <p>इतिहास, भूगोल, कला एवं संस्कृति</p>
+      <button class="btn" onclick="openExam('Rajasthan GK')">
+        Open
+      </button>
+    </div>
+
+    <div class="card searchable">
+      <div class="icon">🎯</div>
+      <h3>Other Exams</h3>
+      <p>अन्य Rajasthan Competitive Exams</p>
+      <button class="btn" onclick="openExam('Other Exams')">
+        Open
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MATERIAL -->
+<section id="material">
+
+  <div class="section-title">
+    <h2>📖 Study Material</h2>
+    <p>Notes और Previous Year Questions</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card material-card">
+      <div class="material-icon">📘</div>
+      <div>
+        <h3>Notes</h3>
+        <p>Topic-wise handwritten style notes</p>
+        <button class="btn" onclick="comingSoon()">
+          View Notes
+        </button>
+      </div>
+    </div>
+
+    <div class="card material-card">
+      <div class="material-icon">📄</div>
+      <div>
+        <h3>PYQ</h3>
+        <p>Previous Year Questions</p>
+        <button class="btn" onclick="comingSoon()">
+          View PYQ
+        </button>
+      </div>
+    </div>
+
+    <div class="card material-card">
+      <div class="material-icon">⬇️</div>
+      <div>
+        <h3>PDF</h3>
+        <p>Study PDF online पढ़ें और download करें</p>
+        <button class="btn" onclick="comingSoon()">
+          View PDF
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TEST -->
+<section id="test">
+
+  <div class="section-title">
+    <h2>📝 Mock Test</h2>
+    <p>अपनी तैयारी को Test करें</p>
+  </div>
+
+  <div class="card" style="text-align:center;">
+
+    <div class="icon">🎯</div>
+
+    <h3>Rajasthan GK Mock Test</h3>
+
+    <p>
+      MCQ • Timer • Score • Result
+    </p>
+
+    <button class="btn" onclick="startTest()">
+      🚀 Start Test
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- STATS -->
+<section>
+
+  <div class="stats">
+
+    <div class="stat">
+      <h2>10+</h2>
+      <p>Exams</p>
+    </div>
+
+    <div class="stat">
+      <h2>500+</h2>
+      <p>Notes</p>
+    </div>
+
+    <div class="stat">
+      <h2>1000+</h2>
+      <p>Questions</p>
+    </div>
+
+    <div class="stat">
+      <h2>100%</h2>
+      <p>Free Start</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <h2>🏜️ RAJ COMPETITION</h2>
+
+  <p>
+    Rajasthan Competitive Exam Preparation Platform
+  </p>
+
+  <p>
+    Notes • PYQ • Mock Test • Rajasthan GK
+  </p>
+
+  <p>
+    © 2026 Raj Competition
+  </p>
+
+</footer>
+
+
+<script>
+
+/* SEARCH */
+function searchCards(){
+
+  let input =
+    document.getElementById("search")
+    .value
+    .toLowerCase();
+
+  let cards =
+    document.querySelectorAll(".searchable");
+
+  cards.forEach(card => {
+
+    let text =
+      card.innerText.toLowerCase();
+
+    if(text.includes(input)){
+      card.style.display = "";
+    }else{
+      card.style.display = "none";
+    }
+
+  });
+
+}
+
+
+/* EXAM BUTTON */
+function openExam(exam){
+
+  alert(
+    exam +
+    " section जल्द ही तैयार किया जाएगा 🚀"
+  );
+
+}
+
+
+/* COMING SOON */
+function comingSoon(){
+
+  alert(
+    "यह section अगले चरण में जोड़ा जाएगा 📚"
+  );
+
+}
+
+
+/* TEST */
+function startTest(){
+
+  alert(
+    "Mock Test System अगले चरण में activate होगा 📝"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
+```
