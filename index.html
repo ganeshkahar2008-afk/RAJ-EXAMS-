@@ -532,20 +532,20 @@ Open
 /* SEARCH */
 function searchCards(){
 
-  let input =
-    document.getElementById("search")
+  const input = document
+    .getElementById("search")
     .value
+    .trim()
     .toLowerCase();
 
-  let cards =
-    document.querySelectorAll(".searchable");
+  const cards = document
+    .querySelectorAll(".searchable");
 
   cards.forEach(card => {
 
-    let text =
-      card.innerText.toLowerCase();
+    const text = card.innerText.toLowerCase();
 
-    if(text.includes(input)){
+    if(input === "" || text.includes(input)){
       card.style.display = "";
     }else{
       card.style.display = "none";
