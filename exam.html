@@ -5,7 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Exam Material | Raj Competition</title>
+.pdf-buttons{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
 
+@media(max-width:600px){
+
+  .pdf-item{
+    flex-direction:column;
+  }
+
+  .pdf-buttons{
+    width:100%;
+  }
+
+  .pdf-buttons .btn{
+    flex:1;
+    text-align:center;
+  }
+}
 <style>
 *{
   box-sizing:border-box;
