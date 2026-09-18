@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel | Raj Competition</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f6f2ea;
+  color:#222;
+}
+
+/* HEADER */
+
+header{
+  background:linear-gradient(135deg,#751d16,#c96a24);
+  color:white;
+  padding:18px 5%;
+  box-shadow:0 4px 15px #0003;
+}
+
+.header{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#ffd45c;
+}
+
+.home{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* MAIN */
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:35px 20px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.title h1{
+  color:#681910;
+  font-size:34px;
+}
+
+.title p{
+  color:#666;
+  margin-top:8px;
+}
+
+/* DASHBOARD */
+
+.grid{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  border:1px solid #eadfce;
+  box-shadow:0 5px 20px #0001;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.card h2{
+  color:#751d16;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#666;
+  line-height:1.5;
+  margin-bottom:18px;
+}
+
+.btn{
+  display:inline-block;
+  border:0;
+  background:#751d16;
+  color:white;
+  padding:11px 18px;
+  border-radius:9px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#a52b1d;
+}
+
+/* ADD MATERIAL */
+
+.form-box{
+  background:white;
+  margin-top:30px;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.form-box h2{
+  color:#681910;
+  margin-bottom:20px;
+}
+
+label{
+  display:block;
+  margin-top:15px;
+  margin-bottom:6px;
+  font-weight:bold;
+}
+
+input,select{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:9px;
+  font-size:16px;
+  outline:none;
+}
+
+input:focus,select:focus{
+  border-color:#c96a24;
+}
+
+/* MATERIAL LIST */
+
+.material-list{
+  margin-top:30px;
+}
+
+.material-item{
+  background:white;
+  padding:17px;
+  margin-top:12px;
+  border-radius:12px;
+  box-shadow:0 3px 12px #0001;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.delete{
+  background:#9b241b;
+}
+
+footer{
+  margin-top:40px;
+  background:#2d1713;
+  color:#ddd;
+  text-align:center;
+  padding:30px;
+}
+
+footer h2{
+  color:#ffd45c;
+  margin-bottom:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .logo{
+    font-size:19px;
+  }
+
+  .title h1{
+    font-size:28px;
+  }
+
+  .material-item{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+🏜️ RAJ <span>COMPETITION</span>
+</div>
+
+<a href="index.html" class="home">
+🏠 Website
+</a>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="title">
+
+<h1>
+🛠️ Admin Dashboard
+</h1>
+
+<p>
+Raj Competition Website Management
+</p>
+
+</div>
+
+
+<!-- DASHBOARD CARDS -->
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="icon">
+📖
+</div>
+
+<h2>
+Add Notes
+</h2>
+
+<p>
+नई Notes PDF को website में जोड़ें।
+</p>
+
+<button class="btn"
+onclick="showForm('notes')">
+➕ Add Notes
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+📄
+</div>
+
+<h2>
+Add PYQ
+</h2>
+
+<p>
+Previous Year Question Papers जोड़ें।
+</p>
+
+<button class="btn"
+onclick="showForm('pyq')">
+➕ Add PYQ
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+📚
+</div>
+
+<h2>
+Manage Material
+</h2>
+
+<p>
+Website के study material को manage करें।
+</p>
+
+<button class="btn"
+onclick="showMaterial()">
+⚙️ Manage
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+🎯
+</div>
+
+<h2>
+Mock Test
+</h2>
+
+<p>
+Mock Test system अभी Coming Soon रहेगा।
+</p>
+
+<button class="btn"
+onclick="comingSoon()">
+Coming Soon
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ADD FORM -->
+
+<div class="form-box" id="formBox"
+style="display:none;">
+
+<h2 id="formTitle">
+➕ Add Material
+</h2>
+
+
+<label>
+Exam
+</label>
+
+<select id="exam">
+
+<option>REET</option>
+<option>BSTC</option>
+<option>CET</option>
+<option>Patwar</option>
+<option>Rajasthan GK</option>
+
+</select>
+
+
+<label>
+Material Name
+</label>
+
+<input
+type="text"
+id="materialName"
+placeholder="जैसे EVS Notes">
+
+
+<label>
+PDF File
+</label>
+
+<input
+type="file"
+id="pdfFile"
+accept=".pdf">
+
+
+<br><br>
+
+<button class="btn"
+onclick="addMaterial()">
+💾 Add Material
+</button>
+
+</div>
+
+
+<!-- MATERIAL -->
+
+<div class="material-list"
+id="materialList"
+style="display:none;">
+
+<h2 style="color:#681910;">
+📚 Material List
+</h2>
+
+<div class="material-item">
+
+<div>
+<b>Example Notes</b>
+<p>BSTC • Notes</p>
+</div>
+
+<button class="btn delete"
+onclick="deleteMaterial(this)">
+🗑️ Delete
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h2>
+🏜️ RAJ COMPETITION
+</h2>
+
+<p>
+Admin Panel
+</p>
+
+</footer>
+
+
+<script>
+
+function showForm(type){
+
+document.getElementById("formBox")
+.style.display="block";
+
+if(type=="notes"){
+
+document.getElementById("formTitle")
+.innerText="📖 Add Notes";
+
+}
+
+else{
+
+document.getElementById("formTitle")
+.innerText="📄 Add PYQ";
+
+}
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+
+function showMaterial(){
+
+document.getElementById("materialList")
+.style.display="block";
+
+}
+
+
+function addMaterial(){
+
+let name=
+document.getElementById("materialName")
+.value;
+
+let file=
+document.getElementById("pdfFile")
+.files[0];
+
+if(!name || !file){
+
+alert("Material Name और PDF दोनों चुनें।");
+
+return;
+
+}
+
+alert(
+"Material तैयार है। Firebase जोड़ने के बाद यह website में automatically upload होगा।"
+);
+
+}
+
+
+function deleteMaterial(button){
+
+button.parentElement.remove();
+
+}
+
+
+function comingSoon(){
+
+alert(
+"🎯 Mock Test अभी Coming Soon है।"
+);
+
+}
+
+</script>
+
+</body>
+  </html>
